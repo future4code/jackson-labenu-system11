@@ -1,14 +1,17 @@
-import express, { Express, Request, Response } from "express";
+import express, { Express } from "express";
 import knex from 'knex'
 //import cors from "cors";
 import { AddressInfo } from "net";
 import dotenv from 'dotenv'
+import { createStudent } from "./students/endpoints/createStudent";
 
 const app: Express = express();
 
 //transformando a resposta do servidor
 app.use(express.json());
 //app.use(cors())
+
+app.post('/student', createStudent)
 
 dotenv.config()
 
