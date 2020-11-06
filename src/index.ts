@@ -4,6 +4,7 @@ import knex from 'knex'
 import { AddressInfo } from "net";
 import dotenv from 'dotenv'
 import { createStudent } from "./students/endpoints/createStudent";
+import { getStudentAgeById } from "./students/endpoints/getStudentAgeById";
 
 const app: Express = express();
 
@@ -12,6 +13,7 @@ app.use(express.json());
 //app.use(cors())
 
 app.post('/student', createStudent)
+app.get('/student/age/:id', getStudentAgeById)
 
 dotenv.config()
 
