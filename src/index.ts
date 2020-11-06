@@ -4,6 +4,7 @@ import knex from 'knex'
 import { AddressInfo } from "net";
 import dotenv from 'dotenv'
 import { createStudent } from "./students/endpoints/createStudent";
+import createClass from "./missions/endpoints/CreateClass";
 
 const app: Express = express();
 
@@ -11,7 +12,8 @@ const app: Express = express();
 app.use(express.json());
 //app.use(cors())
 
-app.post('/student', createStudent)
+app.post('/student', createStudent),
+app.post('/mission', createClass)
 
 dotenv.config()
 
