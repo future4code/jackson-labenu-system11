@@ -14,7 +14,6 @@ export const createStudentDB = async (
             mission_id: data.mission_id
         })
     } catch (error) {
-        throw new Error(error.sqlMessage);
-        
+        throw new Error(error.sqlMessage);  
     }
 }
